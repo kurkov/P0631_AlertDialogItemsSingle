@@ -79,6 +79,11 @@ public class MainActivity extends Activity {
         return adb.create();
     }
 
+    // задаем выбранный по умолчанию элемент списка
+    protected void onPrepareDialog(int id, Dialog dialog) {
+        ((AlertDialog) dialog).getListView().setItemChecked(2, true);
+    }
+
     // обработчик нажатия на пункт списка диалога или кнопку
     OnClickListener myClickListener = new OnClickListener() {
         public void onClick(DialogInterface dialog, int which) {
